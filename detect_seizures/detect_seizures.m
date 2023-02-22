@@ -117,7 +117,7 @@ for i = 1:size(data,2)
                     temp_seizure_timepoints(j) = temp_seizure_timepoints(j)+str2double(deltaTp{1});
                     temp_seizure_data(:,j)=chan_data((temp_seizure_timepoints(j)+time_window(1))*60*fs+1:(temp_seizure_timepoints(j)+time_window(2))*60*fs);
     
-                    set(fig1,'name',['File: ' num2str(i) '/' num2str(length(allChanFiles)) ...
+                    set(fig1,'name',['Channel ' num2str(i) '/' num2str(size(data,2)) ...
                             '; Seizure: ' num2str(j) '/' num2str(length(temp_seizure_timepoints)) '; sEEG-Time [min]: ' num2str(temp_seizure_timepoints(j))]);
                     plot(ax1,t,temp_seizure_data(:,j));
                     tp_ok = questdlg('Is the timepoint now ok?');
